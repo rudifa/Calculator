@@ -12,6 +12,7 @@
 		9D14B7BC20FF7A89003347CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D14B7BA20FF7A89003347CC /* Main.storyboard */; };
 		9D14B7BE20FF7A8C003347CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D14B7BD20FF7A8C003347CC /* Assets.xcassets */; };
 		9D14B7C120FF7A8C003347CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D14B7BF20FF7A8C003347CC /* LaunchScreen.storyboard */; };
+		9D14B7C921013324003347CC /* Brain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D14B7C821013324003347CC /* Brain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9D14B7BD20FF7A8C003347CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D14B7C020FF7A8C003347CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D14B7C220FF7A8C003347CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D14B7C821013324003347CC /* Brain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				9D14B7BD20FF7A8C003347CC /* Assets.xcassets */,
 				9D14B7BF20FF7A8C003347CC /* LaunchScreen.storyboard */,
 				9D14B7C220FF7A8C003347CC /* Info.plist */,
+				9D14B7C821013324003347CC /* Brain.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D14B7C921013324003347CC /* Brain.swift in Sources */,
 				9D14B7B920FF7A89003347CC /* ViewController.swift in Sources */,
 				9D14B7B720FF7A89003347CC /* AppDelegate.swift in Sources */,
 			);

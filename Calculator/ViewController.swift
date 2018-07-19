@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var brain = Brain()
+
     @IBOutlet weak var display: UILabel!
 
     var userIsTyping = false
@@ -36,15 +38,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func performOperation(_ sender: UIButton) {
-        userIsTyping = false
-        let mathSymbol = sender.currentTitle
-        switch mathSymbol {
-        case "π":
-            displayValue = Double.pi
-        case "√":
-            displayValue = sqrt(displayValue)
-        default:
-            break
+        if userIsTyping {
+            brain.setOperand(displayValue)
+            userIsTyping = false
+        }
+        if let mathSymbol = sender.currentTitle {
+            brain.performOperation(mathSymbol)
+        }
+        if let result = brain.result {
+            displayValue = result
         }
     }
 
