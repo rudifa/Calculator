@@ -17,7 +17,9 @@ struct Brain {
         case "π":
             accumulator = Double.pi
         case "√":
-            accumulator = sqrt(accumulator!)
+            if let operand = accumulator {
+                accumulator = sqrt(operand)
+            }
         default:
             break
         }
