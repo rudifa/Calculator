@@ -18,7 +18,6 @@ class ViewController: UIViewController {
 
     @IBAction func digitButtonTapped(_ sender: UIButton) {
         let digit = sender.currentTitle!
-        print("\(digit) tapped")
         if userIsTyping {
             let currentDisplayText = display.text
             display.text = currentDisplayText! + digit
