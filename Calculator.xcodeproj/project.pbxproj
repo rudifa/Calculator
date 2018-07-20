@@ -24,6 +24,7 @@
 		9D14B7C020FF7A8C003347CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D14B7C220FF7A8C003347CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D14B7C821013324003347CC /* Brain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brain.swift; sourceTree = "<group>"; };
+		9D14B7CA210256F9003347CC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		9D14B7AA20FF7A89003347CC = {
 			isa = PBXGroup;
 			children = (
+				9D14B7CA210256F9003347CC /* README.md */,
 				9D14B7B520FF7A89003347CC /* Calculator */,
 				9D14B7B420FF7A89003347CC /* Products */,
 			);
