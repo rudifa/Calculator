@@ -15,6 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var display: UILabel!
 
     var userIsTyping = false
+    var decimalPointSeen = false
+    
+    @IBAction func decimalPointTapped(_ sender: UIButton) {
+        if userIsTyping {
+            if !decimalPointSeen {
+                let currentDisplayText = display.text
+                display.text = currentDisplayText! + "."
+            }
+        } else {
+            display.text = "0."
+            userIsTyping = true
+        }
+        decimalPointSeen = true
+    }
 
     @IBAction func digitButtonTapped(_ sender: UIButton) {
         let digit = sender.currentTitle!
@@ -40,6 +54,7 @@ class ViewController: UIViewController {
         if userIsTyping {
             brain.setOperand(displayValue)
             userIsTyping = false
+            decimalPointSeen = false
         }
         if let mathSymbol = sender.currentTitle {
             brain.performOperation(mathSymbol)
