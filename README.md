@@ -1,6 +1,6 @@
 #  Calculator
 
-Ref. Stanford University course **Developing iOS 10 Apps in Swift** 2017, taught by Paul Hegarty, **Programming Project 1: Calculator**
+Ref. Stanford University course **Developing iOS 10 Apps in Swift** winter/spring 2017, taught by Paul Hegarty, **Programming Project 1: Calculator**
 
 #### Required Tasks
 ✔ 1. Get the calculator working as in lectures 1 and 2
