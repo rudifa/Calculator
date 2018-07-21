@@ -17,6 +17,13 @@ class ViewController: UIViewController {
     var userIsTyping = false
     var decimalPointSeen = false
     
+    @IBAction func clearButtonTapped(_ sender: UIButton) {
+        userIsTyping = false
+        decimalPointSeen = false
+        brain.clearAll()
+        display.text = "0"
+    }
+
     @IBAction func decimalPointTapped(_ sender: UIButton) {
         if userIsTyping {
             if !decimalPointSeen {

@@ -9,12 +9,12 @@ Ref. Stanford University course **Developing iOS 10 Apps in Swift** winter/sprin
 
 ◻ 3. Add more operations for a total of a dozen
 
-◻ 4. Use color to make the UI look nice. At least, make the color of operation buttons diggerent from the numeric keyad buttons.
+✔ 4. Use color to make the UI look nice. At least, make the color of operation buttons diggerent from the numeric keyad buttons.
 
-◻ 5. Add a Bool property `isResultPending6 to the Brain class
+◻ 5. Add a Bool property `isResultPending` to the Brain class
 
 ◻ 6. Add a String property description which returns the sequence of operands and operations that led to the result or to the rewsult pending. Characters "=" or "..." should never appear in the description.
 
 ◻ 7. Add a UILabel which shows the sequence of operands and operations that led to the result or to the rewsult pending. If the resultIsPending, end in "..." else in "=".
 
-◻ 8. Add a C button that clears everything (display, label, pending operations, e.t.c)
+✔ 8. Add a C button that clears everything (display, label, pending operations, e.t.c)

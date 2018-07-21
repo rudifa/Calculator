@@ -11,6 +11,7 @@ import Foundation
 struct Brain {
 
     private var accumulator: Double?
+    private var pendingBinaryOp: PendingBinaryOp?
 
     private enum Operation {
         case constant(Double)
@@ -52,8 +53,6 @@ struct Brain {
         }
     }
 
-    private var pendingBinaryOp: PendingBinaryOp?
-
     private struct PendingBinaryOp {
         let function: (Double,Double) -> Double
         let firstOperand: Double
@@ -71,6 +70,11 @@ struct Brain {
 
     mutating func setOperand(_ operand: Double) {
         accumulator = operand
+    }
+
+    mutating func clearAll() {
+        accumulator = nil
+        pendingBinaryOp = nil
     }
 
     var result: Double? {
