@@ -13,8 +13,8 @@ Ref. Stanford University course **Developing iOS 10 Apps in Swift** winter/sprin
 
 ◻ 5. Add a Bool property `isResultPending` to the Brain class
 
-◻ 6. Add a String property description which returns the sequence of operands and operations that led to the result or to the rewsult pending. Characters "=" or "..." should never appear in the description.
+◻ 6. Add a String property description which returns the sequence of operands and operations that led to the result or to the result pending. Characters "=" or "..." should never appear in the description.
 
-◻ 7. Add a UILabel which shows the sequence of operands and operations that led to the result or to the rewsult pending. If the resultIsPending, end in "..." else in "=".
+◻ 7. Add a UILabel which shows the sequence of operands and operations that led to the result or to the result pending. If resultPending, end in "..." else in "=".
 
 ✔ 8. Add a C button that clears everything (display, label, pending operations, e.t.c)
