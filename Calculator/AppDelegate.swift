@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+         if ProcessInfo.processInfo.arguments.contains("XCUITests") {
+            window?.layer.speed = 100.0 // speeds up the test in simulator about 3x 
+        }
         return true
     }
 
