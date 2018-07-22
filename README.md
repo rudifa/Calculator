@@ -25,3 +25,5 @@ Ref. Stanford University course **Developing iOS 10 Apps in Swift** winter/sprin
 On branch `try_ui_test` added the XCUITest bundle and the first 4 test cases.
 
 Added test helpers and speeded up tests.
+
+Merged branch `try_ui_test` into `master`.
