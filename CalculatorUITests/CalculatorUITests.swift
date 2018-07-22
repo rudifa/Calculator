@@ -8,8 +8,52 @@
 
 import XCTest
 
+
+extension XCUIApplication {
+
+    /// Tap on buttons specified in `labels`
+    ///
+    /// - Parameter labels: string of single-character button labels
+    func tap(buttons labels: String) {
+        for label in labels.split() {
+            self.buttons[label].tap()
+        }
+    }
+
+    /// Taps on buttons specified in `labels` and asserts that display shows the expected text
+    ///
+    /// - Parameters:
+    ///   - labels: string of single-character button labels
+    ///   - displayText: expected display text
+    func tap(buttons labels: String, expect displayText: String) {
+        tap(buttons: labels)
+        let display = self.staticTexts["AID_display"]
+        XCTAssertEqual(display.label, displayText)
+    }
+
+    /// Tap on buttons specified in `labels` and asserts that display shows the expected text
+    ///
+    /// - Parameters:
+    ///   - labels: array of button labels
+    ///   - displayText: expected display text
+    func tap(buttons labels: [String], expect displayText: String) {
+        for label in labels {
+            self.buttons[label].tap()
+        }
+        let display = self.staticTexts["AID_display"]
+        XCTAssertEqual(display.label, displayText)
+    }
+}
+
+
 class CalculatorUITests: XCTestCase {
-        
+
+    func tapButton(_ label: String) {
+        XCUIApplication().buttons[label].tap()
+    }
+
+    let app = XCUIApplication()
+
     override func setUp() {
         super.setUp()
         
@@ -33,7 +77,7 @@ class CalculatorUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 
         let app = XCUIApplication()
-        print("app.state", app.state.rawValue)
+        //print("app.debugDescription=", app.debugDescription)
         // (lldb) po app.debugDescription
 
         let display = app.staticTexts["AID_display"]
@@ -109,6 +153,45 @@ class CalculatorUITests: XCTestCase {
         app.buttons["2"].tap()
         app.buttons["="].tap()
         XCTAssertEqual(display.label, "0.3")
+    }
+
+    func testExample5() {
+
+//        let app = XCUIApplication()
+        let display = app.staticTexts["AID_display"]
+        app.tap(buttons: "24+56=")
+        XCTAssertEqual(display.label, "80.0")
+    }
+
+    func testExample6() {
+
+        XCUIApplication().tap(buttons: "", expect: "0")
+        XCUIApplication().tap(buttons: "24+56=", expect: "80.0")
+        XCUIApplication().tap(buttons: "2.4+5.6=", expect: "8.0")
+
+    }
+
+    func testExample7() {
+
+        app.tap(buttons: "π", expect: "3.14159265358979")
+    }
+    
+    func testExample8() {
+
+        XCTContext.runActivity(named: "Check arithmetic operations") { _ in
+            app.tap(buttons: "1000+234=", expect: "1234.0")
+            app.tap(buttons: "1000-234=", expect: "766.0")
+            app.tap(buttons: "1000×234=", expect: "234000.0")
+            app.tap(buttons: "1000÷234=", expect: "4.27350427350427")
+        }
+
+        XCTContext.runActivity(named: "Check transcendental operations") { _ in
+            app.tap(buttons: ["π"], expect: "3.14159265358979")
+            app.tap(buttons: ["π", "cos"], expect: "-1.0")
+            app.tap(buttons: ["1", "cos"], expect: "0.54030230586814")
+            app.tap(buttons: ["2", "√"], expect: "1.4142135623731")
+        }
+
     }
 
 }
