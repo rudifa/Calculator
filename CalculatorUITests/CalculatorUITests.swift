@@ -20,7 +20,7 @@ extension XCUIApplication {
         }
     }
 
-    /// Taps on buttons specified in `labels` and asserts that display shows the expected text
+    /// Taps on buttons specified in `labels` and assert that display shows the expected text
     ///
     /// - Parameters:
     ///   - labels: string of single-character button labels
@@ -31,18 +31,20 @@ extension XCUIApplication {
         XCTAssertEqual(display.label, displayText)
     }
 
-    /// Tap on buttons specified in `labels` and asserts that display shows the expected text
+    /// Tap on buttons specified in `labels` and assert that display shows the expected text
     ///
     /// - Parameters:
     ///   - labels: array of button labels
     ///   - displayText: expected display text
-    func tap(buttons labels: [String], expect displayText: String) {
-        for label in labels {
-            self.buttons[label].tap()
+    func tap(sep separator: Character, buttons labels: String, expect displayText: String) {
+        for label in labels.split(separator: separator) {
+            self.buttons[String(label)].tap()
         }
         let display = self.staticTexts["AID_display"]
         XCTAssertEqual(display.label, displayText)
     }
+
+    // TODO consolidate methods
 }
 
 
@@ -189,10 +191,10 @@ class CalculatorUITests: XCTestCase {
         }
 
         XCTContext.runActivity(named: "Check transcendental operations") { _ in
-            app.tap(buttons: ["π"], expect: "3.14159265358979")
-            app.tap(buttons: ["π", "cos"], expect: "-1.0")
-            app.tap(buttons: ["1", "cos"], expect: "0.54030230586814")
-            app.tap(buttons: ["2", "√"], expect: "1.4142135623731")
+            app.tap(sep: " ", buttons: "π", expect: "3.14159265358979")
+            app.tap(sep: " ", buttons: "π cos", expect: "-1.0")
+            app.tap(sep: " ", buttons: "1 cos", expect: "0.54030230586814")
+            app.tap(sep: " ", buttons: "2 √", expect: "1.4142135623731")
         }
 
     }

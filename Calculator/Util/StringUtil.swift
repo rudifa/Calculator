@@ -1,5 +1,5 @@
 //
-//  StringUtil.swift v.0.1.0
+//  StringUtil.swift v.0.1.1
 //  Swift4Util
 //
 //  Created by Rudolf Farkas on 22.07.18.
@@ -16,6 +16,19 @@ extension String {
     func split() -> [String] {
         return self.map { String($0) }
     }
+
+
+    /// Split into [String] using separator (possibly repeated)
+    ///
+    /// - Parameter separator: Character
+    /// - Returns: [String]
+    ///
+    /// - Example: "his obsessions" -> ["hi", " ob", "e", "ion"]
+    func split(separator: Character) -> [String] {
+        return self.split(separator: separator, omittingEmptySubsequences: true).map{ String($0) }
+    }
+
+
 }
 
 extension Array where Element: StringProtocol {
@@ -27,3 +40,4 @@ extension Array where Element: StringProtocol {
         return self.joined(separator: "")
     }
 }
+
